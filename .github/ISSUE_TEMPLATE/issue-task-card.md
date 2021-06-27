@@ -2,8 +2,8 @@
 name: Issue Task Card
 about: Issue Task Card
 title: "[server] "
-labels: issue
-assignees: ''
+labels: Back-end, Bare-minimum
+assignees: heesmile0310, johny985
 
 ---
 
