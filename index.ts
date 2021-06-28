@@ -1,8 +1,17 @@
-const express = require("express");
+// const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const http = require("http");
-const app = express();
+import express from "express"
+// const app = express();
+
+class App {
+  public application : express.Application;
+  constructor(){
+    this.application = express();
+  }
+}
+const app = new App().application;
 
 const port = 80;
 const ip = "127.0.0.1";
@@ -19,7 +28,7 @@ app.use(
     credentials: true,
   })
 );
-app.get('/', (req, res) => {
+app.get('/', (req : express.Request, res : express.Response) => {
   res.status(201).send('ㅎㅇ염 ㅎㅎ ');
 });
 
