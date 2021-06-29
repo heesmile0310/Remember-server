@@ -2,12 +2,22 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const http = require("http");
-import { Request, Response, Application } from 'express';
+import { Request, Response, Application } from "express";
 // const app = express();
 
+import "reflect-metadata";
+import { createConnection } from "typeorm";
+
+//db 연결
+createConnection()
+  .then(() => {
+    console.log(`DB connected!`);
+  })
+  .catch((error) => console.log(error));
+
 class App {
-  public application : Application;
-  constructor(){
+  public application: Application;
+  constructor() {
     this.application = express();
   }
 }
@@ -28,9 +38,8 @@ app.use(
     credentials: true,
   })
 );
-app.get('/', (req : Request, res : Response) => {
-  res.status(201).send('ㅎㅇ염 ㅎㅎ ');
+app.get("/", (req: Request, res: Response) => {
+  res.status(201).send("ㅎㅇ염 ㅎㅎ ");
 });
-
 
 module.exports = app;
