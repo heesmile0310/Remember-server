@@ -5,6 +5,9 @@ const http = require("http");
 import { Request, Response, Application } from "express";
 // const app = express();
 
+// const loginController = require("./src/controllers/loginController");
+// const logingithubController = require("./src/controllers/logingithubController");
+// const logingoogleController = require("./src/controllers/logingoogleController");
 import "reflect-metadata";
 import { createConnection } from "typeorm";
 
@@ -38,6 +41,11 @@ app.use(
     credentials: true,
   })
 );
+
+// app.post("/login", loginController);
+// app.post("/githublogin", logingithubController);
+// app.post("/googlelogin", logingoogleController);
+
 app.get("/", (req: Request, res: Response) => {
   res.status(201).send("ㅎㅇ염 ㅎㅎ ");
 });
