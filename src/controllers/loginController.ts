@@ -1,4 +1,4 @@
-const { user } = require("../models");
+const { user } = require("../entity/users");
 const jwt = require("jsonwebtoken");
 const accessSecret = process.env.ACCESS_SECRET;
 const refreshSecret = process.env.REFRESH_SECRET;
