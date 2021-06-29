@@ -5,6 +5,8 @@ const http = require("http");
 import { Request, Response, Application } from "express";
 // const app = express();
 
+const loginController = require("./src/controllers/loginController");
+
 import "reflect-metadata";
 import { createConnection } from "typeorm";
 
@@ -38,6 +40,9 @@ app.use(
     credentials: true,
   })
 );
+
+app.post("/login", loginController);
+
 app.get("/", (req: Request, res: Response) => {
   res.status(201).send("ㅎㅇ염 ㅎㅎ ");
 });
