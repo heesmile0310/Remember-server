@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import http from "http";
-
+//주석입니다
 import { Request, Response, Application } from "express";
 import "reflect-metadata";
 import { createConnection } from "typeorm";
