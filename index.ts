@@ -1,7 +1,7 @@
-import express from "express";
-import cors from "cors";
-import bodyParser from "body-parser";
-import http from "http";
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const http = require("http");
 
 import { Request, Response, Application } from "express";
 import "reflect-metadata";
@@ -43,13 +43,15 @@ app.use(
     credentials: true,
   })
 );
-app.get("/", (req: Request, res: Response) => {
-  res.status(201).send("hello remember~");
-});
+
 //라우터
 app.use("/login", loginRouter);
 app.use("/github-login", loginGithubRouter);
 app.use("/google-login", loginGoogleRouter);
 app.use("/signup", signUpRouter);
 
-export default app;
+app.get("/", (req: Request, res: Response) => {
+  res.status(201).send("hello remember~");
+});
+
+module.exports = app;
