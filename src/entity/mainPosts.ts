@@ -10,13 +10,13 @@ import {
   BaseEntity,
   ManyToOne,
 } from "typeorm";
-import { comments } from "./comments";
-import { donors } from "./donors";
-import { likes } from "./likes";
-import { users } from "./users";
+import comments from "./comments";
+import donors from "./donors";
+import likes from "./likes";
+import users from "./users";
 
 @Entity({ name: "mainPosts" })
-export class mainPosts extends BaseEntity {
+export default class mainPosts extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
