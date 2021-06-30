@@ -1,10 +1,8 @@
-const express = require("express");
+import * as express from "express";
 const loginGithubRouter = express.Router();
 import { Request, Response, Application } from "express";
 
-const {
-  loginGithubController,
-} = require("../controllers/loginGithubController");
+import loginGithubController from "../controllers/loginGithubController";
 
 loginGithubRouter.post("/github-login", (req: Request, res: Response) => {
   loginGithubController;
