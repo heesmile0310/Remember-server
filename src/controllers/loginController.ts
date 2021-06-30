@@ -1,9 +1,8 @@
-const { users } = require("../entity/users");
 const jwt = require("jsonwebtoken");
 const accessSecret = process.env.ACCESS_SECRET;
 const refreshSecret = process.env.REFRESH_SECRET;
 import { Request, Response } from "express";
-
+import users from "../entity/users";
 const loginController = {
   loginController: async (req: Request, res: Response) => {
     const { email, password } = req.body;
@@ -16,7 +15,8 @@ const loginController = {
         .status(403)
         .send({ data: null, message: "please check your email / password" });
     } else {
-      const { email, name } = userInfo.dataValues;
+      //데이터 안 받아 와지면, userInfo.dataValues 이걸로
+      const { email, name } = userInfo;
       const info = {
         email: email,
         name: name,
