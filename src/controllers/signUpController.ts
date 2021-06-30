@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 //const { users } = require("../entity/users");
 import users from "../entity/users";
 
-module.exports = {
+const signupController = {
   signupController: async (req: Request, res: Response) => {
     const { email, password, name, mobile, dateOfBirth } = req.body;
 
@@ -28,3 +28,4 @@ module.exports = {
     }
   },
 };
+export default signupController;
