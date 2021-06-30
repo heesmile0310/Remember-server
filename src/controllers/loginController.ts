@@ -15,7 +15,7 @@ const loginController = {
         .status(403)
         .send({ data: null, message: "please check your email / password" });
     } else {
-      //데이터 안 받아 와지면, userInfo.dataValues 이걸로
+      //데이터 안 받아와지면, userInfo.dataValues 이걸로
       const { email, name } = userInfo;
       const info = {
         email: email,

@@ -4,7 +4,7 @@ import { Request, Response, Application } from "express";
 
 import mypageController from "../controllers/mypageController";
 
-mypageRouter.post("/mypage", (req: Request, res: Response) => {
+mypageRouter.get("/mypage", (req: Request, res: Response) => {
   mypageController;
 });
 export default mypageRouter;
