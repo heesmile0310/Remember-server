@@ -17,7 +17,7 @@ import { mainPosts } from "./mainPosts";
 import { users } from "./users";
 
 @Entity({ name: "likes" })
-export class likes {
+export class likes extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 

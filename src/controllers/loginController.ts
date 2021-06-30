@@ -1,4 +1,4 @@
-const { user } = require("../entity/users");
+const { users } = require("../entity/users");
 const jwt = require("jsonwebtoken");
 const accessSecret = process.env.ACCESS_SECRET;
 const refreshSecret = process.env.REFRESH_SECRET;
@@ -7,7 +7,7 @@ import { Request, Response } from "express";
 module.exports = {
   loginController: async (req: Request, res: Response) => {
     const { email, password } = req.body;
-    const userInfo = await user.findOne({
+    const userInfo = await users.findOne({
       where: { email: email, password: password },
     });
 
