@@ -2,14 +2,15 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const http = require("http");
-import { Request, Response, Application } from "express";
-// const app = express();
 
-// const loginController = require("./src/controllers/loginController");
-// const logingithubController = require("./src/controllers/logingithubController");
-// const logingoogleController = require("./src/controllers/logingoogleController");
+import { Request, Response, Application } from "express";
 import "reflect-metadata";
 import { createConnection } from "typeorm";
+
+//라우터
+import loginRouter from "./src/routes/login";
+import loginGithubRouter from "./src/routes/loginGithub";
+import loginGoogleRouter from "./src/routes/loginGoogle";
 
 //db 연결
 createConnection()
@@ -42,9 +43,10 @@ app.use(
   })
 );
 
-// app.post("/login", loginController);
-// app.post("/githublogin", logingithubController);
-// app.post("/googlelogin", logingoogleController);
+//라우터
+app.use("/login", loginRouter);
+app.use("/github-login", loginGithubRouter);
+app.use("/google-login", loginGoogleRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.status(201).send("ㅎㅇ염 ㅎㅎ ");
