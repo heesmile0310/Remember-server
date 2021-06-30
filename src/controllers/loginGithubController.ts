@@ -5,7 +5,7 @@ const clientID = process.env.GITHUB_CLIENT_ID;
 const clientSecret = process.env.GITHUB_CLIENT_SECRET;
 const axios = require("axios");
 // db테이블 가져오기
-const { user } = require("../models");
+const { users } = require("../entity/users");
 
 module.exports = async (req: Request, res: Response) => {
   console.log(req.body);
@@ -31,7 +31,7 @@ module.exports = async (req: Request, res: Response) => {
           headers: { authorization: `token ${accessToken}` },
         })
         .then(async (response: any) => {
-          const result = await user.findOne({
+          const result = await users.findOne({
             email: response.data.email,
           });
           if (result) {
@@ -45,7 +45,7 @@ module.exports = async (req: Request, res: Response) => {
             //   sameSite: "none",
             // });
           } else {
-            await user.create({
+            await users.create({
               name: response.data.name,
               email: response.data.email,
             });
