@@ -5,7 +5,7 @@ const clientID = process.env.GOOGLE_CLIENT_ID;
 const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
 const axios = require("axios");
 // db테이블 가져오기
-const { users } = require("../entity/users");
+import users from "../entity/users";
 
 const loginGoogleController = {
   loginGoogleController: async (req: Request, res: Response) => {
@@ -30,7 +30,7 @@ const loginGoogleController = {
         const accessToken = response.data.access_token;
         //   const refreshToken = response.data.refresh_token;
         await axios
-          .get("https://api.github.com/user", {
+          .get("https://www.googleapis.com/oauth2/v1/userinfo?alt=json", {
             headers: { authorization: `token ${accessToken}` },
           })
           .then(async (response: any) => {

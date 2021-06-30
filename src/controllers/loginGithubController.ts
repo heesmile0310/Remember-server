@@ -5,7 +5,7 @@ const clientID = process.env.GITHUB_CLIENT_ID;
 const clientSecret = process.env.GITHUB_CLIENT_SECRET;
 const axios = require("axios");
 // db테이블 가져오기
-const { users } = require("../entity/users");
+import users from "../entity/users";
 
 const loginGithubController = {
   loginGithubController: async (req: Request, res: Response) => {
