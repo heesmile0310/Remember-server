@@ -11,6 +11,7 @@ import { createConnection } from "typeorm";
 import loginRouter from "./src/routes/login";
 import loginGithubRouter from "./src/routes/loginGithub";
 import loginGoogleRouter from "./src/routes/loginGoogle";
+import signUpRouter from "./src/routes/signUp";
 
 //db 연결
 createConnection()
@@ -47,9 +48,10 @@ app.use(
 app.use("/login", loginRouter);
 app.use("/github-login", loginGithubRouter);
 app.use("/google-login", loginGoogleRouter);
+app.use("/signup", signUpRouter);
 
 app.get("/", (req: Request, res: Response) => {
-  res.status(201).send("ㅎㅇ염 ㅎㅎ ");
+  res.status(201).send("hello remember~");
 });
 
 module.exports = app;
