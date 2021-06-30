@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-//const { users } = require("../entity/users");
 import users from "../entity/users";
 
 const signupController = {
