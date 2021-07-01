@@ -36,9 +36,9 @@ export default class donors extends BaseEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToOne((type) => users, (users) => users.id)
-  users: users[];
+  // @ManyToOne((type) => users, (users) => users.id)
+  // users: users[];
 
-  @OneToMany((type) => mainPosts, (mainPosts) => mainPosts.id)
-  mainPosts: mainPosts[];
+  // @OneToMany((type) => mainPosts, (mainPosts) => mainPosts.id)
+  // mainPosts: mainPosts[];
 }

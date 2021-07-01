@@ -36,9 +36,9 @@ export default class comments extends BaseEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToOne((type) => users, (users) => users.id)
-  users: users[];
+  //   @ManyToOne((type) => users, (users) => users.id)
+  //   users: users[];
 
-  @ManyToOne((type) => mainPosts, (mainPosts) => mainPosts.id)
-  mainPosts: mainPosts[];
+  //   @ManyToOne((type) => mainPosts, (mainPosts) => mainPosts.id)
+  //   mainPosts: mainPosts[];
 }

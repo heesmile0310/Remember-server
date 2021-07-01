@@ -35,12 +35,12 @@ export default class mainPosts extends BaseEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @OneToMany((type) => likes, (likes) => likes.mainPost_id)
-  likes: likes[];
+  //   @OneToMany((type) => likes, (likes) => likes.mainPost_id)
+  //   likes: likes[];
 
-  @ManyToOne((type) => donors, (donors) => donors.mainPost_id)
-  donors: donors[];
+  //   @ManyToOne((type) => donors, (donors) => donors.mainPost_id)
+  //   donors: donors[];
 
-  @OneToMany((type) => comments, (comments) => comments.mainPost_id)
-  comments: comments[];
+  //   @OneToMany((type) => comments, (comments) => comments.mainPost_id)
+  //   comments: comments[];
 }
