@@ -17,7 +17,7 @@ import likes from "./likes";
 import mainPosts from "./mainPosts";
 
 @Entity({ name: "users" })
-export default class users extends BaseEntity {
+export default class users {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -42,12 +42,12 @@ export default class users extends BaseEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @OneToMany((type) => comments, (comments) => comments.user_id)
-  comments: comments[];
+  // @OneToMany((type) => comments, (comments) => comments.user_id)
+  // comments: comments[];
 
-  @OneToMany((type) => donors, (donors) => donors.user_id)
-  donors: donors[];
+  // @OneToMany((type) => donors, (donors) => donors.user_id)
+  // donors: donors[];
 
-  @OneToMany((type) => likes, (likes) => likes.user_id)
-  likes: likes[];
+  // @OneToMany((type) => likes, (likes) => likes.user_id)
+  // likes: likes[];
 }

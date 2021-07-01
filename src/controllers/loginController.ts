@@ -1,3 +1,18 @@
+import { Request, Response } from "express";
+import { getRepository } from "typeorm";
+import users from "../entity/users";
+const loginController = {
+  loginController: async (req: Request, res: Response) => {
+    const { email, password } = req.body;
+    const user = await getRepository(users);
+    const userInfo = await user.findOne({
+      where: { email: email, password: password },
+    });
+    console.log(userInfo);
+  },
+};
+export default loginController;
+/**
 const jwt = require("jsonwebtoken");
 const accessSecret = process.env.ACCESS_SECRET;
 const refreshSecret = process.env.REFRESH_SECRET;
@@ -48,3 +63,4 @@ const loginController = {
   },
 };
 export default loginController;
+ **/
