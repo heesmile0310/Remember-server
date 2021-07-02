@@ -3,16 +3,28 @@ import { DataTypes, Model, Association } from "sequelize";
 import { sequelize } from "./index";
 
 interface UserAttributes {
+  name: string;
   email: string;
+  password: string;
+  mobile: string;
+  dateOfBirth: string;
 }
 
 export class Users extends Model<UserAttributes> {
+  public name!: string;
   public email!: string;
+  public password!: string;
+  public mobile!: string;
+  public dateOfBirth!: string;
 }
 
 Users.init(
   {
+    name: DataTypes.STRING,
     email: DataTypes.STRING,
+    password: DataTypes.STRING,
+    mobile: DataTypes.STRING,
+    dateOfBirth: DataTypes.STRING,
   },
   {
     sequelize,
