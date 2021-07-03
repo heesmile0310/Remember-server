@@ -1,7 +1,15 @@
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
+
+//controller 불러오기
 import loginController from "./controllers/loginController";
+import signupController from "./controllers/signupController";
+import OAuthInfoController from "./controllers/OAuthInfoController";
+import mypageController from "./controllers/mypageController";
+import updateUserController from "./controllers/updateUserController";
+import withdrawController from "./controllers/withdrawController";
+
 const bodyParser = require("body-parser");
 const http = require("http");
 const PORT = process.env.DATABASE_PORT;
@@ -38,7 +46,13 @@ app.options(
   cors(corsOption)
 );
 
+// Controller 적용
 app.post("/login", loginController.loginController);
+app.post("/signup", signupController.signupController);
+app.post("/oauth-info", OAuthInfoController.OAuthInfoController); //api 추가하기
+app.get("/mypage", mypageController.mypageController);
+app.put("update-user", updateUserController.updateUserController);
+app.delete("./withdraw", withdrawController.withdrawController);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -50,6 +64,7 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
+
 export default app;
 
 // import express from "express";
