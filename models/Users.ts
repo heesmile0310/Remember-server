@@ -8,6 +8,7 @@ interface UserAttributes {
   password: string;
   mobile: string;
   dateOfBirth: string;
+  OAuth: boolean;
 }
 
 export class Users extends Model<UserAttributes> {
@@ -16,6 +17,7 @@ export class Users extends Model<UserAttributes> {
   public password!: string;
   public mobile!: string;
   public dateOfBirth!: string;
+  public OAuth!: boolean;
 }
 
 Users.init(
@@ -25,6 +27,7 @@ Users.init(
     password: DataTypes.STRING,
     mobile: DataTypes.STRING,
     dateOfBirth: DataTypes.STRING,
+    OAuth: DataTypes.TINYINT, //boolean
   },
   {
     sequelize,
