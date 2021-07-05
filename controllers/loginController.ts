@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { Users } from "../models/Users";
-const jwt = require("jsonwebtoken");
 require("dotenv").config();
+const jwt = require("jsonwebtoken");
 const accessSecret = process.env.ACCESS_SECRET;
 const refreshSecret = process.env.REFRESH_SECRET;
 

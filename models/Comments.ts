@@ -34,12 +34,12 @@ Comments.init(
   }
 );
 
-Comments.hasMany(Users, {
-  foreignKey: "user_id",
-  sourceKey: "id",
-});
+// Comments.hasMany(Users, {
+//   foreignKey: "user_id",
+//   sourceKey: "id",
+// });
 
-Comments.hasMany(MainPosts, {
-  foreignKey: "mainPost_id",
-  sourceKey: "id",
-});
+// Comments.hasMany(MainPosts, {
+//   foreignKey: "mainPost_id",
+//   sourceKey: "id",
+// });
