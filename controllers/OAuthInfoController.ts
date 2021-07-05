@@ -4,6 +4,8 @@ import { Request, Response } from "express";
 import { Users } from "../models/Users";
 const OAuthInfoController = {
   OAuthInfoController: async (req: Request, res: Response) => {
+    console.log(req.body);
+
     const email = req.body.email;
     const name = req.body.name;
 
@@ -26,6 +28,7 @@ const OAuthInfoController = {
   },
 };
 export default OAuthInfoController;
+
 // const OAuthInfoController = {
 //   OAuthInfoController: async (req: Request, res: Response) => {
 //     const authorization = req.headers.authorization;

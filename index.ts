@@ -8,9 +8,12 @@ import signupController from "./controllers/signupController";
 import OAuthInfoController from "./controllers/OAuthInfoController";
 import mypageController from "./controllers/mypageController";
 import updateUserController from "./controllers/updateUserController";
+
 import withdrawController from "./controllers/withdrawController";
 
+
 const bodyParser = require("body-parser");
+
 const http = require("http");
 const PORT = process.env.DATABASE_PORT;
 const cookieParser = require("cookie-parser");
@@ -24,6 +27,7 @@ class App {
 }
 
 const app = new App().application;
+app.use(bodyParser.json());
 const port = 80;
 const ip = "127.0.0.1";
 const server = http.createServer(app);
@@ -31,10 +35,11 @@ server.listen(port);
 const corsOption = {
   Headers: { "content-type": "application/json" },
   origin: true,
-  method: ["post", "get", "delete", "options"],
+  method: ["post", "get", "delete", "options", "put"],
   credentials: true,
-  // preflightContinue: true,
+  preflightContinue: true,
 };
+
 app.use((req, res, next) => {
   next();
 }, cors(corsOption));
@@ -51,7 +56,9 @@ app.post("/login", loginController.loginController);
 app.post("/signup", signupController.signupController);
 app.post("/oauth-info", OAuthInfoController.OAuthInfoController); //api 추가하기
 app.get("/mypage", mypageController.mypageController);
-app.put("update-user", updateUserController.updateUserController);
+
+app.put("/update-user", updateUserController.updateUserController);
+
 app.delete("./withdraw", withdrawController.withdrawController);
 
 app.use(express.urlencoded({ extended: true }));
