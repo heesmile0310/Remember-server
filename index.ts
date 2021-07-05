@@ -8,7 +8,8 @@ import signupController from "./controllers/signupController";
 import OAuthInfoController from "./controllers/OAuthInfoController";
 import mypageController from "./controllers/mypageController";
 import updateUserController from "./controllers/updateUserController";
-import withdrawController from "./controllers/withdrawController";
+import withdrawController from "./controllers/witdrawController";
+import mainpageController from "./controllers/mainpageController";
 
 const bodyParser = require("body-parser");
 
@@ -26,7 +27,7 @@ class App {
 
 const app = new App().application;
 app.use(bodyParser.json());
-const port = 80;
+const port = 3000;
 const ip = "127.0.0.1";
 const server = http.createServer(app);
 server.listen(port);
@@ -56,6 +57,7 @@ app.post("/oauth-info", OAuthInfoController.OAuthInfoController); //api 추가�
 app.get("/mypage", mypageController.mypageController);
 app.put("/update-user", updateUserController.updateUserController);
 app.delete("./withdraw", withdrawController.withdrawController);
+app.get("./mainpage", mainpageController.mainpageController);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
