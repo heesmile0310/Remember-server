@@ -6,12 +6,14 @@ import { Users } from "./Users";
 
 interface DonorAttributes {
   user_id: number;
+  user_name: string;
   mainPost_id: number;
   donationAmount: number;
 }
 
 export class Donors extends Model<DonorAttributes> {
   public user_id!: number;
+  public user_name!: string;
   public mainPost_id!: number;
   public donationAmount!: number;
 }
@@ -19,6 +21,7 @@ export class Donors extends Model<DonorAttributes> {
 Donors.init(
   {
     user_id: DataTypes.INTEGER,
+    user_name: DataTypes.STRING,
     mainPost_id: DataTypes.INTEGER,
     donationAmount: DataTypes.INTEGER,
   },
