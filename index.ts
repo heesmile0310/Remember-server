@@ -8,9 +8,7 @@ import signupController from "./controllers/signupController";
 import OAuthInfoController from "./controllers/OAuthInfoController";
 import mypageController from "./controllers/mypageController";
 import updateUserController from "./controllers/updateUserController";
-
 import withdrawController from "./controllers/withdrawController";
-
 
 const bodyParser = require("body-parser");
 
@@ -56,9 +54,7 @@ app.post("/login", loginController.loginController);
 app.post("/signup", signupController.signupController);
 app.post("/oauth-info", OAuthInfoController.OAuthInfoController); //api 추가하기
 app.get("/mypage", mypageController.mypageController);
-
 app.put("/update-user", updateUserController.updateUserController);
-
 app.delete("./withdraw", withdrawController.withdrawController);
 
 app.use(express.urlencoded({ extended: true }));
