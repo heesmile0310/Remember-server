@@ -31,12 +31,12 @@ Donors.init(
   }
 );
 
-Donors.hasMany(Users, {
-  foreignKey: "user_id",
-  sourceKey: "id",
-});
+// Donors.hasMany(Users, {
+//   foreignKey: "user_id",
+//   sourceKey: "id",
+// });
 
-Donors.hasMany(MainPosts, {
-  foreignKey: "mainPost_id",
-  sourceKey: "id",
-});
+// Donors.hasMany(MainPosts, {
+//   foreignKey: "mainPost_id",
+//   sourceKey: "id",
+// });

@@ -19,24 +19,25 @@ const mypageController = {
           return decoded;
         }
       });
+      console.log(data.email);
 
-      const userInfo = await Users.findOne({
-        where: { email: data.email, name: data.name },
-      });
-      const findUserId = await Users.findOne({
-        where: { name: data.name },
-      });
-      const donorInfo = await Donors.findAll({
-        where: { user_id: findUserId.name },
-      });
+      // const userInfo = await Users.findOne({
+      //   where: { email: data.email, name: data.name },
+      // });
+      // const findUserId = await Users.findOne({
+      //   where: { name: data.name },
+      // });
+      // const donorInfo = await Donors.findAll({
+      //   where: { user_id: findUserId.name },
+      // });
 
-      if (!userInfo) {
-        res.status(400).send({ data: null, message: "access denied" });
-      } else {
-        res
-          .status(200)
-          .json({ data: { userInfo, donorInfo }, message: "granted" }); // 유저 정보와 후원 내역 정보 보내드림.
-      }
+      // if (!userInfo) {
+      //   res.status(400).send({ data: null, message: "access denied" });
+      // } else {
+      //   res
+      //     .status(200)
+      //     .json({ data: { userInfo, donorInfo }, message: "granted" }); // 유저 정보와 후원 내역 정보 보내드림.
+      // }
     }
   },
 };

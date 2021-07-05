@@ -28,12 +28,12 @@ Likes.init(
   }
 );
 
-Likes.hasMany(Users, {
-  foreignKey: "user_id",
-  sourceKey: "id",
-});
+// Likes.hasMany(Users, {
+//   foreignKey: "user_id",
+//   sourceKey: "id",
+// });
 
-Likes.hasMany(MainPosts, {
-  foreignKey: "mainPost_id",
-  sourceKey: "id",
-});
+// Likes.hasMany(MainPosts, {
+//   foreignKey: "mainPost_id",
+//   sourceKey: "id",
+// });
