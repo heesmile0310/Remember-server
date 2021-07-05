@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { Users } from "../models/Users";
+import { Donors } from "../models/Donors";
 const jwt = require("jsonwebtoken");
 const accessSecret = process.env.ACCESS_SECRET;
 
@@ -22,11 +23,19 @@ const mypageController = {
       const userInfo = await Users.findOne({
         where: { email: data.email, name: data.name },
       });
+      const findUserId = await Users.findOne({
+        where: { name: data.name },
+      });
+      const donorInfo = await Donors.findAll({
+        where: { user_id: findUserId.name },
+      });
 
       if (!userInfo) {
         res.status(400).send({ data: null, message: "access denied" });
       } else {
-        res.status(200).json({ data: { userInfo }, message: "granted" });
+        res
+          .status(200)
+          .json({ data: { userInfo, donorInfo }, message: "granted" }); // 유저 정보와 후원 내역 정보 보내드림.
       }
     }
   },
