@@ -5,6 +5,7 @@ import { Users } from "../models/Users";
 const OAuthInfoController = {
   OAuthInfoController: async (req: Request, res: Response) => {
     console.log(req.body);
+
     const email = req.body.email;
     const name = req.body.name;
 
