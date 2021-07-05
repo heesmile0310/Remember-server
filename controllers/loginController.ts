@@ -7,7 +7,6 @@ const refreshSecret = process.env.REFRESH_SECRET;
 
 const loginController = {
   loginController: async (req: Request, res: Response) => {
-    console.log(req.body);
     const { email, password } = req.body;
     const userInfo = await Users.findOne({
       where: { email: email, password: password },
