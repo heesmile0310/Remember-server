@@ -28,7 +28,7 @@ class App {
 
 const app = new App().application;
 app.use(bodyParser.json());
-const port = 3000;
+const port = 8080;
 const ip = "127.0.0.1";
 const server = http.createServer(app);
 server.listen(port);
