@@ -10,6 +10,7 @@ import mypageController from "./controllers/mypageController";
 import updateUserController from "./controllers/updateUserController";
 import withdrawController from "./controllers/witdrawController";
 import mainpageController from "./controllers/mainpageController";
+import commentController from "./controllers/commentController";
 
 const bodyParser = require("body-parser");
 
@@ -56,8 +57,10 @@ app.post("/signup", signupController.signupController);
 app.post("/oauth-info", OAuthInfoController.OAuthInfoController); //api 추가하기
 app.get("/mypage", mypageController.mypageController);
 app.put("/update-user", updateUserController.updateUserController);
-app.delete("./withdraw", withdrawController.withdrawController);
-app.get("./mainpage", mainpageController.mainpageController);
+app.delete("/withdraw", withdrawController.withdrawController);
+app.get("/mainpage", mainpageController.mainpageController);
+app.post("/comment", commentController.commentController);
+app.get("/comment-list", commentController.commentListController);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());

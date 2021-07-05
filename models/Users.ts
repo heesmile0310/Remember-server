@@ -1,5 +1,8 @@
 "use strict";
 import { DataTypes, Model, Association } from "sequelize";
+// import { Comments } from "./Comments";
+// import { Donors } from "./Donors";
+// import { Likes } from "./Likes";
 import { sequelize } from "./index";
 
 interface UserAttributes {
@@ -35,6 +38,23 @@ Users.init(
   }
 );
 
+// Users.hasMany(Comments),
+//   {
+//     sourceKey: "id",
+//     foreignKey: "user_id",
+//   };
+
+// Users.hasMany(Donors),
+//   {
+//     sourceKey: "id",
+//     foreignKey: "user_id",
+//   };
+
+// Users.hasMany(Likes),
+//   {
+//     sourceKey: "id",
+//     foreignKey: "user_id",
+//   };
 // import {
 //   Sequelize,
 //   DataTypes,
