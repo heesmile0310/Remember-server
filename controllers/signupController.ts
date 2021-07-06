@@ -3,7 +3,7 @@ import { Users } from "../models/Users";
 
 const signupController = {
   signupController: async (req: Request, res: Response) => {
-    const { email, password, name, mobile, dateOfBirth } = req.body;
+    const { email, password, name, mobile, dateOfBirth, url } = req.body;
 
     if (!email || !password || !name || !mobile || !dateOfBirth) {
       return res.status(422).send("please fill in all the blanks");
@@ -22,6 +22,7 @@ const signupController = {
           mobile: mobile,
           dateOfBirth: dateOfBirth,
           OAuth: false,
+          url: url,
         });
         res.sendStatus(201);
       }

@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
+import { url } from "inspector";
 import { Users } from "../models/Users";
 
 const updateUserController = {
   updateUserController: async (req: Request, res: Response) => {
-    const { password, mobile, dateOfBirth, email } = req.body;
+    const { password, mobile, dateOfBirth, email, url } = req.body;
 
     const userInfo = await Users.findOne({
       where: { email: email },
@@ -14,6 +15,7 @@ const updateUserController = {
         password: password,
         mobile: mobile,
         dateOfBirth: dateOfBirth,
+        url: url,
       },
       {
         where: { email: userInfo.email },
