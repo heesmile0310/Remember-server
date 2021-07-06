@@ -11,7 +11,7 @@
     "migrationcomments": "./node_modules/.bin/ts-node ./migrations/create-table/3.create-table-comments.ts",
     "migrationdonors": "./node_modules/.bin/ts-node ./migrations/create-table/4.create-table-donors.ts",
     "migrationlikes": "./node_modules/.bin/ts-node ./migrations/create-table/5.create-table-likes.ts",
-    "migrationquiz": "./node_modules/.bin/ts-node ./migrations/create-table/6.create-table-quiz.ts"
+    "migrationquizzes": "./node_modules/.bin/ts-node ./migrations/create-table/6.create-table-quizzes.ts"
   },
   "repository": {
     "type": "git",
