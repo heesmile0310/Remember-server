@@ -6,21 +6,27 @@ import { Users } from "./Users";
 
 interface LikeAttributes {
   user_id: number;
+  user_name: string;
   mainPost_id: number;
-  likeCount: number;
+  post_title: string;
+  likeStatus: boolean;
 }
 
 export class Likes extends Model<LikeAttributes> {
   public user_id!: number;
+  public user_name!: string;
   public mainPost_id!: number;
-  public likeCount!: number;
+  public post_title!: string;
+  public likeStatus!: boolean;
 }
 
 Likes.init(
   {
     user_id: DataTypes.INTEGER,
+    user_name: DataTypes.STRING,
     mainPost_id: DataTypes.INTEGER,
-    likeCount: DataTypes.INTEGER,
+    post_title: DataTypes.STRING,
+    likeStatus: DataTypes.TINYINT,
   },
   {
     sequelize,
