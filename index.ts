@@ -11,7 +11,7 @@ import updateUserController from "./controllers/updateUserController";
 import withdrawController from "./controllers/withdrawController";
 import mainpageController from "./controllers/mainpageController";
 import commentController from "./controllers/commentController";
-import likeController from "./controllers/likeController";
+import quizController from "./controllers/quizController";
 
 const bodyParser = require("body-parser");
 
@@ -62,8 +62,7 @@ app.delete("/withdraw", withdrawController.withdrawController);
 app.get("/mainpage", mainpageController.mainpageController);
 app.post("/comment", commentController.commentController);
 app.get("/comment-list", commentController.commentListController);
-app.put("/put-like", likeController.putLikeController);
-app.get("/get-like", likeController.getLikeController);
+app.get("/quiz", quizController.quizController);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
