@@ -7,11 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.ts",
     "migrationusers": "./node_modules/.bin/ts-node ./migrations/create-table/1.create-table-users.ts",
-    "migrationsmainposts": "./node_modules/.bin/ts-node ./migrations/create-table/2.create-table-mainposts.ts",
+    "migrationmainposts": "./node_modules/.bin/ts-node ./migrations/create-table/2.create-table-mainposts.ts",
     "migrationcomments": "./node_modules/.bin/ts-node ./migrations/create-table/3.create-table-comments.ts",
     "migrationdonors": "./node_modules/.bin/ts-node ./migrations/create-table/4.create-table-donors.ts",
     "migrationlikes": "./node_modules/.bin/ts-node ./migrations/create-table/5.create-table-likes.ts",
-    "migrationquizzes": "./node_modules/.bin/ts-node ./migrations/create-table/6.create-table-quizzes.ts"
+    "migrationquizzes": "./node_modules/.bin/ts-node ./migrations/create-table/6.create-table-quizzes.ts",
+    "migrationtodays": "./node_modules/.bin/ts-node ./migrations/create-table/7.create-table-todays.ts"
   },
   "repository": {
     "type": "git",

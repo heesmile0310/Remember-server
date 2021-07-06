@@ -13,6 +13,7 @@ import mainpageController from "./controllers/mainpageController";
 import commentController from "./controllers/commentController";
 import likeController from "./controllers/likeController";
 import quizController from "./controllers/quizController";
+import todayController from "./controllers/todayController";
 
 const bodyParser = require("body-parser");
 
@@ -67,6 +68,7 @@ app.post("/comment-list", commentController.commentListController);
 app.put("/put-like", likeController.putLikeController);
 app.post("/post-like", likeController.postLikeController);
 app.get("/quiz", quizController.quizController);
+app.post("/today", todayController.todayController);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
