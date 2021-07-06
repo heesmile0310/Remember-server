@@ -57,7 +57,8 @@ app.options(
 app.post("/login", loginController.loginController);
 app.post("/signup", signupController.signupController);
 app.post("/oauth-info", OAuthInfoController.OAuthInfoController); //api 추가하기
-app.get("/mypage", mypageController.mypageController);
+app.get("/mypage", mypageController.getMypageController); //Mypage 일반 로그인
+app.post("/mypage", mypageController.postMypageController); // Mypage 소셜 로그인
 app.put("/update-user", updateUserController.updateUserController);
 app.delete("/withdraw", withdrawController.withdrawController);
 app.get("/mainpage", mainpageController.mainpageController);
@@ -79,61 +80,3 @@ app.listen(PORT, () => {
 });
 
 export default app;
-
-// import express from "express";
-// import cors from "cors";
-// import bodyParser from "body-parser";
-// import http from "http";
-// //주석입니다
-// import { Request, Response, Application } from "express";
-// import "reflect-metadata";
-// import { sequelize } from "./models"; //시퀄라이즈 객체
-// const dotenv = require("dotenv");
-// dotenv.config();
-
-// class App {
-//   public application: Application;
-//   constructor() {
-//     this.application = express();
-//   }
-// }
-
-// const PORT: number = parseInt(process.env.DATABASE_PORT) || 80;
-// const HOST: string = process.env.DATABASE_HOST || "localhost";
-// const app = new App().application;
-
-// const port = 80;
-// const ip = "127.0.0.1";
-// const server = http.createServer(app);
-// console.log("Listening on http://" + ip + ":" + port);
-// server.listen(port);
-
-// app.listen(PORT, HOST, async () => {
-//   console.log(`Server Listening on ${HOST}:${PORT}`);
-
-//   // //sequelize-db 연결 테스트
-//   await sequelize
-//     .authenticate()
-//     .then(async () => {
-//       console.log("connection success");
-//     })
-//     .catch((e) => {
-//       console.log("TT : ", e);
-//     });
-// });
-
-// app.use(bodyParser.json());
-// app.use(express.json());
-// app.use(
-//   cors({
-//     origin: true,
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     credentials: true,
-//   })
-// );
-
-// app.get("/", (req: Request, res: Response) => {
-//   res.status(201).send("hello remember~");
-// });
-
-// module.exports = app;

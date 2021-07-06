@@ -7,6 +7,7 @@ const OAuthInfoController = {
 
     const email = req.body.email;
     const name = req.body.name;
+    const url = req.body.url;
 
     const userInfo = await Users.findOne({
       where: { email: email },
@@ -20,7 +21,7 @@ const OAuthInfoController = {
         mobile: null,
         dateOfBirth: null,
         OAuth: true,
-        url: null,
+        url: url,
       });
     } else {
       console.log("welcome");
