@@ -11,11 +11,8 @@ const mypageController = {
     const userInfo = await Users.findOne({
       where: { email: email, name: name },
     });
-    const findUserName = await Users.findOne({
-      where: { name: name },
-    });
     const donorInfo = await Donors.findAll({
-      where: { user_name: findUserName.name },
+      where: { user_name: userInfo.name },
     });
 
     if (!userInfo) {
@@ -44,11 +41,9 @@ const mypageController = {
       const userInfo = await Users.findOne({
         where: { email: data.email, name: data.name },
       });
-      const findUserName = await Users.findOne({
-        where: { name: data.name },
-      });
+
       const donorInfo = await Donors.findAll({
-        where: { user_name: findUserName.name },
+        where: { user_name: userInfo.name },
       });
 
       if (!userInfo) {
