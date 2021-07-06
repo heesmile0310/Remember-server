@@ -63,9 +63,9 @@ app.put("/update-user", updateUserController.updateUserController);
 app.delete("/withdraw", withdrawController.withdrawController);
 app.get("/mainpage", mainpageController.mainpageController);
 app.post("/comment", commentController.commentController);
-app.get("/comment-list", commentController.commentListController);
+app.post("/comment-list", commentController.commentListController);
 app.put("/put-like", likeController.putLikeController);
-app.get("/get-like", likeController.getLikeController);
+app.post("/post-like", likeController.postLikeController);
 app.get("/quiz", quizController.quizController);
 
 app.use(express.urlencoded({ extended: true }));
