@@ -8,7 +8,7 @@ import signupController from "./controllers/signupController";
 import OAuthInfoController from "./controllers/OAuthInfoController";
 import mypageController from "./controllers/mypageController";
 import updateUserController from "./controllers/updateUserController";
-import withdrawController from "./controllers/witdrawController";
+import withdrawController from "./controllers/withdrawController";
 import mainpageController from "./controllers/mainpageController";
 import commentController from "./controllers/commentController";
 
