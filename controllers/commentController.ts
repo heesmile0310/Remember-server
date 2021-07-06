@@ -7,21 +7,25 @@ import { url } from "inspector";
 
 const commentController = {
   commentController: async (req: Request, res: Response) => {
-    const { name, comment, post_title, url } = req.body;
-    await Comments.create({
-      user_id: null,
-      user_name: name,
-      mainPost_id: null,
-      post_title: post_title,
-      comment: comment,
-      url: url,
-    });
+    const { name, comment, title, url } = req.body;
+    if (name === undefined || name === null) {
+      console.log("please login");
+    } else {
+      await Comments.create({
+        user_id: null,
+        user_name: name,
+        mainPost_id: null,
+        post_title: title,
+        comment: comment,
+        url: url,
+      });
+    }
   },
 
   commentListController: async (req: Request, res: Response) => {
-    const { post_title, user_name } = req.body;
+    const { title } = req.body;
     const commentInfo = await Comments.findAll({
-      where: { post_title: post_title },
+      where: { post_title: title },
     });
     res.status(200).send({ data: { commentInfo } });
   },
