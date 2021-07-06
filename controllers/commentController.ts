@@ -13,6 +13,7 @@ const commentController = {
       mainPost_id: null,
       post_title: post_title,
       comment: comment,
+      url: null,
     });
   },
 
