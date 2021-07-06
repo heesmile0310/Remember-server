@@ -21,6 +21,7 @@ const OAuthInfoController = {
         mobile: null,
         dateOfBirth: null,
         OAuth: true,
+        url: null,
       });
     } else {
       console.log("welcome");
