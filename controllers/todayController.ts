@@ -19,7 +19,10 @@ const todayController = {
     } else {
       // 기존 날짜
 
-      const TodayNumber = await Todays.increment("visited", {
+      await Todays.increment("visited", {
+        where: { todayDate: check },
+      });
+      const TodayNumber = await Todays.findOne({
         where: { todayDate: check },
       });
       res.status(200).send({ data: TodayNumber.visited });
