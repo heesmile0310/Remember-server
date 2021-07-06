@@ -10,6 +10,7 @@ interface CommentAttributes {
   mainPost_id: number;
   post_title: string;
   comment: string;
+  url: string;
 }
 
 export class Comments extends Model<CommentAttributes> {
@@ -18,6 +19,7 @@ export class Comments extends Model<CommentAttributes> {
   public mainPost_id!: number;
   public post_title!: string;
   public comment!: string;
+  public url!: string;
 }
 
 Comments.init(
@@ -27,6 +29,7 @@ Comments.init(
     mainPost_id: DataTypes.INTEGER,
     post_title: DataTypes.STRING,
     comment: DataTypes.STRING,
+    url: DataTypes.STRING,
   },
   {
     sequelize,
