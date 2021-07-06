@@ -40,7 +40,7 @@ const likeController = {
       }
     }
   },
-  getLikeController: async (req: Request, res: Response) => {
+  postLikeController: async (req: Request, res: Response) => {
     const { title } = req.body;
     const likeTable = await Likes.findAll({
       where: { post_title: title, likeStatus: true },
