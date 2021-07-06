@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.ts"
+    "start": "nodemon index.ts",
+    "migrationusers": "./node_modules/.bin/ts-node ./migrations/create-table/1.create-table-users.ts",
+    "migrationsmainposts": "./node_modules/.bin/ts-node ./migrations/create-table/2.create-table-mainposts.ts",
+    "migrationcomments": "./node_modules/.bin/ts-node ./migrations/create-table/3.create-table-comments.ts",
+    "migrationdonors": "./node_modules/.bin/ts-node ./migrations/create-table/4.create-table-donors.ts",
+    "migrationlikes": "./node_modules/.bin/ts-node ./migrations/create-table/5.create-table-likes.ts",
+    "migrationquiz": "./node_modules/.bin/ts-node ./migrations/create-table/6.create-table-quiz.ts"
   },
   "repository": {
     "type": "git",
