@@ -61,7 +61,7 @@ app.post("/oauth-info", OAuthInfoController.OAuthInfoController); //api 추가�
 app.get("/mypage", mypageController.getMypageController); //Mypage 일반 로그인
 app.post("/mypage", mypageController.postMypageController); // Mypage 소셜 로그인
 app.put("/update-user", updateUserController.updateUserController);
-app.delete("/withdraw", withdrawController.withdrawController);
+app.post("/withdraw", withdrawController.withdrawController);
 app.get("/mainpage", mainpageController.mainpageController);
 app.post("/comment", commentController.commentController);
 app.post("/comment-list", commentController.commentListController);
