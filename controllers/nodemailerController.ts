@@ -40,7 +40,7 @@ const nodemailerController = {
         <p style="text-align: left; line-height: 1;"><span style='color: rgb(0, 0, 0); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;'><strong>Remember</strong></span><span style='color: rgb(0, 0, 0); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;'>&nbsp;가입하신 것을 환영합니다.</span></p>
         <p style="text-align: left; line-height: 1;"><span style='color: rgb(0, 0, 0); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;'>아래의 인증코드를 입력하시면 가입이 정상적으로 완료됩니다.</span></p>
         <main style="text-align: left; line-height: 1;"><br></main>
-        <p><span style="font-size: 36px; background-color: rgb(209, 213, 216);">766776</span></p>
+        <p><span style="font-size: 36px; background-color: rgb(209, 213, 216);">${authenNum}</span></p>
         <p><br></p>
         <p style="text-align: left; line-height: 1;">
           <font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji"><span style="font-size: 13px; background-color: rgb(255, 255, 255);">리멤버는 어떻게 개발되었는지 궁금하시다면?</span></font>
@@ -50,10 +50,10 @@ const nodemailerController = {
         </p>
         <ul>
           <li style="text-align: left; line-height: 1;">
-              <font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji"><span style="font-size: 13px; background-color: rgb(255, 255, 255);">Remember Client</span></font>
+              <font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji"><a href="https://github.com/codestates/Remember-client", style="font-size: 13px; background-color: rgb(255, 255, 255); cursor: pointer;">Remember Client</a></font>
           </li>
           <li style="text-align: left; line-height: 1;">
-              <font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji"><span style="font-size: 13px; background-color: rgb(255, 255, 255);">Remember Server</span></font>
+              <font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji"><a href="https://github.com/codestates/Remember-server", style="font-size: 13px; background-color: rgb(255, 255, 255); cursor: pointer;">Remember Server</a></font>
           </li>
         </ul>
         <p>
