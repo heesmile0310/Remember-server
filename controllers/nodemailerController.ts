@@ -10,7 +10,6 @@ const nodemailerController = {
     if (authenNum > 1000000) {
       authenNum = authenNum - 100000;
     }
-    console.log(authenNum);
 
     const email = nodemailer.createTransport({
       //메일트랩

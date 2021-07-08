@@ -4,6 +4,10 @@ import { Todays } from "../models/Todays";
 const todayController = {
   todayController: async (req: Request, res: Response) => {
     const { check } = req.body;
+    let peopleVisited = Math.floor(Math.random() * 10000) + 1000;
+    if (peopleVisited > 1000) {
+      return (peopleVisited = peopleVisited + 9000);
+    }
 
     const todayVisited = await Todays.findOne({
       where: { todayDate: check },
@@ -12,7 +16,7 @@ const todayController = {
     if (!todayVisited) {
       // 새로운 날짜
       const TodayNumber = await Todays.create({
-        visited: 1,
+        visited: peopleVisited,
         todayDate: check,
       });
       res.status(200).send({ data: TodayNumber!.visited }); //deploy error
