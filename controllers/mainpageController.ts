@@ -5,7 +5,7 @@ const mainpageController = {
   mainpageController: async (req: Request, res: Response) => {
     const posts = await MainPosts.findAll();
 
-    res.status(200).send({ data: { posts } });
+    res.status(200).send({ data: posts });
   },
 };
 
