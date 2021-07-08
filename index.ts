@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
-
 //controller 불러오기
 import loginController from "./controllers/loginController";
 import signupController from "./controllers/signupController";
@@ -32,7 +31,7 @@ class App {
 
 const app = new App().application;
 app.use(bodyParser.json());
-const port = 8080;
+const port = 80;
 const ip = "127.0.0.1";
 const server = http.createServer(app);
 server.listen(port);
@@ -64,6 +63,7 @@ app.post("/mypage", mypageController.postMypageController); // Mypage 소셜 로
 app.put("/update-user", updateUserController.updateUserController);
 app.post("/withdraw", withdrawController.withdrawController);
 app.get("/mainpage", mainpageController.mainpageController);
+app.get("/mainpage/:id", mainpageController.mainpageSingleController);
 app.post("/comment", commentController.commentController);
 app.post("/comment-list", commentController.commentListController);
 app.put("/put-like", likeController.putLikeController);

@@ -15,7 +15,7 @@ const todayController = {
         visited: 1,
         todayDate: check,
       });
-      res.status(200).send({ data: TodayNumber.visited });
+      res.status(200).send({ data: TodayNumber!.visited }); //deploy error
     } else {
       // 기존 날짜
 
@@ -25,7 +25,7 @@ const todayController = {
       const TodayNumber = await Todays.findOne({
         where: { todayDate: check },
       });
-      res.status(200).send({ data: TodayNumber.visited });
+      res.status(200).send({ data: TodayNumber!.visited }); //deploy error
     }
   },
 };

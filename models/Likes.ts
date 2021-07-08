@@ -5,19 +5,19 @@ import { MainPosts } from "./MainPosts";
 import { Users } from "./Users";
 
 interface LikeAttributes {
-  user_id: number;
-  user_name: string;
+  user_id: number | null;
+  user_name: string | null;
   mainPost_id: number | null;
-  post_title: string;
-  likeStatus: boolean;
+  post_title: string | null;
+  likeStatus: boolean | null;
 }
 
 export class Likes extends Model<LikeAttributes> {
   public user_id!: number | null;
-  public user_name!: string;
+  public user_name!: string | null;
   public mainPost_id!: number | null;
-  public post_title!: string;
-  public likeStatus!: boolean;
+  public post_title!: string | null;
+  public likeStatus!: boolean | null;
 }
 
 Likes.init(

@@ -12,13 +12,10 @@ const nodemailerController = {
     }
     console.log(authenNum);
 
-    // await AuthNum.create({
-    //   Auth : authenNum
-    // })
-
     const email = nodemailer.createTransport({
       //메일트랩
-      host: "smtp.mailtrap.io",
+      service: "gmail",
+      host: "smtp.gmail.com",
       port: 2525,
       secure: false,
       auth: {
@@ -29,7 +26,7 @@ const nodemailerController = {
 
     const content = await email.sendMail({
       from: "Remember-service@gmail.com",
-      to: "83f08c1f63-7b314f@inbox.mailtrap.io",
+      to: `${mail}`,
       subject: "Login to Remember",
       html: `
       <style>
@@ -69,34 +66,6 @@ const nodemailerController = {
 
     res.status(200).send({ data: authenNum });
   },
-
-  // checkAuthController: async (req: Request, res: Response) => {
-  //   const { number } = req.body;
-
-  //   const checkAuth = await AuthNum.findOne({
-  //     where: { Auth: number },
-  //   });
-  //   if (checkAuth) {
-  //     await AuthNum.destroy({
-  //       where: { Auth: number },
-  //     });
-  //     res.status(200).send({ data: "true" });
-  //   } else {
-  //     res.status(400).send({ data: "false" });
-  //   }
-  // },
 };
 
 export default nodemailerController;
-
-// const content = {
-//   from: "리멤버팀",
-//   to: "wngud985@gmail.com",
-//   subject: "Login to Remember",
-//   html: `
-//   <style></style>
-
-//   `,
-// };
-
-// send(content);
