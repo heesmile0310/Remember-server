@@ -50,10 +50,10 @@ const nodemailerController = {
         </p>
         <ul>
           <li style="text-align: left; line-height: 1;">
-              <font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji"><span OnClick="location.href='https://github.com/codestates/Remember-client'",style="font-size: 13px; background-color: rgb(255, 255, 255);">Remember Client</span></font>
+              <font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji"><a href="https://github.com/codestates/Remember-client", style="font-size: 13px; background-color: rgb(255, 255, 255); cursor: pointer;">Remember Client</a></font>
           </li>
           <li style="text-align: left; line-height: 1;">
-              <font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji"><span OnClick="location.href='https://github.com/codestates/Remember-server'", style="font-size: 13px; background-color: rgb(255, 255, 255);">Remember Server</span></font>
+              <font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji"><a href="https://github.com/codestates/Remember-server", style="font-size: 13px; background-color: rgb(255, 255, 255); cursor: pointer;">Remember Server</a></font>
           </li>
         </ul>
         <p>
