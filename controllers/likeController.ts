@@ -22,7 +22,7 @@ const likeController = {
         const userStatus = await Likes.findOne({
           where: { user_name: name, post_title: title },
         });
-        if (!userStatus.likeStatus) {
+        if (!userStatus!.likeStatus) {
           await Likes.update(
             {
               likeStatus: true,
