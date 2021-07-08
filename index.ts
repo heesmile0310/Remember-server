@@ -63,6 +63,7 @@ app.post("/mypage", mypageController.postMypageController); // Mypage 소셜 로
 app.put("/update-user", updateUserController.updateUserController);
 app.post("/withdraw", withdrawController.withdrawController);
 app.get("/mainpage", mainpageController.mainpageController);
+app.get("/mainpage/:id", mainpageController.mainpageSingleController);
 app.post("/comment", commentController.commentController);
 app.post("/comment-list", commentController.commentListController);
 app.put("/put-like", likeController.putLikeController);
