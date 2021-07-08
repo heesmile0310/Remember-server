@@ -5,17 +5,17 @@ import { MainPosts } from "./MainPosts";
 import { Users } from "./Users";
 
 interface DonorAttributes {
-  user_id: number;
-  user_name: string;
-  mainPost_id: number;
-  donationAmount: number;
+  user_id: number | null;
+  user_name: string | null;
+  mainPost_id: number | null;
+  donationAmount: number | null;
 }
 
 export class Donors extends Model<DonorAttributes> {
-  public user_id!: number;
-  public user_name!: string;
-  public mainPost_id!: number;
-  public donationAmount!: number;
+  public user_id!: number | null;
+  public user_name!: string | null;
+  public mainPost_id!: number | null;
+  public donationAmount!: number | null;
 }
 
 Donors.init(

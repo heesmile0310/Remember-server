@@ -18,7 +18,7 @@ const updateUserController = {
         url: url,
       },
       {
-        where: { email: userInfo.email },
+        where: { email: userInfo!.email }, //deploy error
       }
     );
   },

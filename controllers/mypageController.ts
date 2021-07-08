@@ -12,7 +12,7 @@ const mypageController = {
       where: { email: email, name: name },
     });
     const donorInfo = await Donors.findAll({
-      where: { user_name: userInfo.name },
+      where: { user_name: userInfo!.name }, //deploy error
     });
 
     if (!userInfo) {
@@ -30,7 +30,8 @@ const mypageController = {
       res.status(400).send({ data: null, message: "invalid access token" });
     } else {
       const token = authorization.split(" ")[1];
-      const data = jwt.verify(token, accessSecret, (err, decoded) => {
+      const data = jwt.verify(token, accessSecret, (err: any, decoded: any) => {
+        //deploy error
         if (err) {
           return err.message;
         } else {
@@ -43,7 +44,7 @@ const mypageController = {
       });
 
       const donorInfo = await Donors.findAll({
-        where: { user_name: userInfo.name },
+        where: { user_name: userInfo!.name }, //deploy error
       });
 
       if (!userInfo) {

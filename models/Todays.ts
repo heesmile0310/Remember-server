@@ -2,13 +2,13 @@ import { DataTypes, Model, Association } from "sequelize";
 import { sequelize } from "./index";
 
 interface TodayAttributes {
-  visited: number;
-  todayDate: string;
+  visited: number | null;
+  todayDate: string | null;
 }
 
 export class Todays extends Model<TodayAttributes> {
-  public visited!: number;
-  public todayDate!: string;
+  public visited!: number | null;
+  public todayDate!: string | null;
 }
 
 Todays.init(

@@ -5,21 +5,21 @@ import { MainPosts } from "./MainPosts";
 import { Users } from "./Users";
 
 interface CommentAttributes {
-  user_id: number;
-  user_name: string;
-  mainPost_id: number;
-  post_title: string;
-  comment: string;
-  url: string;
+  user_id: number | null;
+  user_name: string | null;
+  mainPost_id: number | null;
+  post_title: string | null;
+  comment: string | null;
+  url: string | null;
 }
 
 export class Comments extends Model<CommentAttributes> {
-  public user_id!: number;
-  public user_name!: string;
-  public mainPost_id!: number;
-  public post_title!: string;
-  public comment!: string;
-  public url!: string;
+  public user_id!: number | null;
+  public user_name!: string | null;
+  public mainPost_id!: number | null;
+  public post_title!: string | null;
+  public comment!: string | null;
+  public url!: string | null;
 }
 
 Comments.init(
