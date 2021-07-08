@@ -7,6 +7,14 @@ const mainpageController = {
 
     res.status(200).send({ data: posts });
   },
+
+  mainpageSingleController: async (req: Request, res: Response) => {
+    const post = await MainPosts.findByPk(req.params.id);
+    if (!post) {
+      return res.status(404).json({ msg: "Post not found" });
+    }
+    res.status(200).send({ data: post });
+  },
 };
 
 export default mainpageController;
