@@ -7,8 +7,8 @@ interface TodayAttributes {
 }
 
 export class Todays extends Model<TodayAttributes> {
-  public visited!: number;
-  public todayDate!: string;
+  public visited: number;
+  public todayDate: string;
 }
 
 Todays.init(
