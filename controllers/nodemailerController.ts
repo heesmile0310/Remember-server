@@ -4,14 +4,14 @@ const nodemailer = require("nodemailer");
 
 const nodemailerController = {
   sendAuthController: async (req: Request, res: Response) => {
-    const { mail } = req.body;
+    const { email } = req.body;
 
     var authenNum = Math.floor(Math.random() * 1000000) + 100000;
     if (authenNum > 1000000) {
       authenNum = authenNum - 100000;
     }
 
-    const email = nodemailer.createTransport({
+    const mail = nodemailer.createTransport({
       //메일트랩
       service: "gmail",
       host: "smtp.gmail.com",
@@ -23,7 +23,7 @@ const nodemailerController = {
       },
     });
 
-    const content = await email.sendMail({
+    const content = await mail.sendMail({
       from: "Remember-service@gmail.com",
       to: `${mail}`,
       subject: "Login to Remember",
@@ -67,12 +67,12 @@ const nodemailerController = {
   },
 
   sendreceiptController: async (req: Request, res: Response) => {
-    const { name, mail, title, amount } = req.body;
+    const { name, email, title, amount } = req.body;
 
     const today = String(new Date()).slice(0, 15);
     const random = Math.floor(Math.random() * 100);
 
-    const email = nodemailer.createTransport({
+    const mail = nodemailer.createTransport({
       //메일트랩
       service: "gmail",
       host: "smtp.gmail.com",
@@ -84,9 +84,9 @@ const nodemailerController = {
       },
     });
 
-    const content = await email.sendMail({
+    const content = await mail.sendMail({
       from: "Remember-service@gmail.com",
-      to: `${mail}`,
+      to: `${email}`,
       subject: `[Remember] ${name}후원자님, 요청하신 증명서를 보내드립니다.`,
       html: `
       <head>
@@ -211,7 +211,7 @@ const nodemailerController = {
                                   <tbody>
                                       <tr>
                                           <td>Remember, Inc.<br><span style="color: rgb(67, 67, 67); font-family: Gulim; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;">경기도 성남시 분당구 대왕판교로236번길 22</span></td>
-                                          <td><br>${name}<br>${mail}</td>
+                                          <td><br>${name}<br>${email}</td>
                                       </tr>
                                   </tbody>
                               </table>
