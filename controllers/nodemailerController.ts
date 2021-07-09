@@ -25,7 +25,7 @@ const nodemailerController = {
 
     const content = await mail.sendMail({
       from: "Remember-service@gmail.com",
-      to: `${mail}`,
+      to: `${email}`,
       subject: "Login to Remember",
       html: `
       <style>
