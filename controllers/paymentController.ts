@@ -11,7 +11,7 @@ const paymentController = {
       mainPost_id: null,
       mainPost_title: title,
       donationAmount: amount,
-      receiptURL: receipt,
+      receiptURL: receipt || null,
     });
   },
 };
