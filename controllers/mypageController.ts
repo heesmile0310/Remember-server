@@ -12,7 +12,7 @@ const mypageController = {
       where: { email: email, name: name },
     });
     const donorInfo = await Donors.findAll({
-      where: { user_name: userInfo!.name }, //deploy error
+      where: { user_name: userInfo!.name, user_email: userInfo!.email }, //deploy error
     });
 
     if (!userInfo) {
@@ -44,7 +44,7 @@ const mypageController = {
       });
 
       const donorInfo = await Donors.findAll({
-        where: { user_name: userInfo!.name }, //deploy error
+        where: { user_name: userInfo!.name, user_email: userInfo!.email }, //deploy error
       });
 
       if (!userInfo) {
