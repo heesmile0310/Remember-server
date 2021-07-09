@@ -27,14 +27,14 @@ const likeController = {
             {
               likeStatus: true,
             },
-            { where: { user_name: name } }
+            { where: { user_name: name, post_title: title } }
           );
         } else {
           await Likes.update(
             {
               likeStatus: false,
             },
-            { where: { user_name: name } }
+            { where: { user_name: name, post_title: title } }
           );
         }
       }
