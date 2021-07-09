@@ -6,7 +6,7 @@ const todayController = {
     const { check } = req.body;
     let peopleVisited = Math.floor(Math.random() * 10000) + 1000;
     if (peopleVisited > 1000) {
-      return (peopleVisited = peopleVisited + 9000);
+      peopleVisited = peopleVisited + 9000;
     }
 
     const todayVisited = await Todays.findOne({

@@ -6,7 +6,7 @@ const nodemailerController = {
   sendAuthController: async (req: Request, res: Response) => {
     const { mail } = req.body;
 
-    var authenNum = Math.floor(Math.random() * 1000000) + 100000;
+    let authenNum = Math.floor(Math.random() * 1000000) + 100000;
     if (authenNum > 1000000) {
       authenNum = authenNum - 100000;
     }
