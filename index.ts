@@ -73,7 +73,7 @@ app.post("/post-like", likeController.postLikeController);
 app.get("/quiz", quizController.quizController);
 app.post("/today", todayController.todayController);
 app.post("/mail", nodemailerController.sendAuthController);
-app.post("/mail", nodemailerController.sendreceiptController);
+app.post("/mailreceipt", nodemailerController.sendreceiptController);
 app.post("/payment", paymentController.paymentController);
 
 app.use(express.urlencoded({ extended: true }));
