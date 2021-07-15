@@ -23,10 +23,7 @@ const commentController = {
   },
 
   commentListController: async (req: Request, res: Response) => {
-    const { title } = req.body;
-    const commentInfo = await Comments.findAll({
-      where: { post_title: title },
-    });
+    const commentInfo = await Comments.findAll();
     res.status(200).send({ data: { commentInfo } });
   },
 };

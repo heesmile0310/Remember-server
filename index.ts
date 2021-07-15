@@ -67,7 +67,7 @@ app.get("/mainpage", mainpageController.mainpageController);
 app.post("/mainpage", mainpageController.mainpageDonationController);
 app.get("/mainpage/:id", mainpageController.mainpageSingleController);
 app.post("/comment", commentController.commentController);
-app.post("/comment-list", commentController.commentListController);
+app.get("/comment-list", commentController.commentListController);
 app.put("/put-like", likeController.putLikeController);
 app.post("/post-like", likeController.postLikeController);
 app.get("/quiz", quizController.quizController);
