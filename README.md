@@ -28,7 +28,7 @@
 
 ## **Server Side**
 
-![프레젠테이션1](https://user-images.githubusercontent.com/76901060/125633438-2050f847-fac8-4f03-99c8-f80cc14ae7d2.jpg)
+![프레젠테이션1](https://user-images.githubusercontent.com/76901060/125781433-13f5e852-b3c4-4afe-9eb1-b7c121d92d14.jpg)
 
 ---
 
@@ -40,7 +40,7 @@
 
 ### **Period**
 
-- 2021.06.21 - 2021.07-20
+- 2021.06.21 - 2021.07.20
 
 
 ### **Link**
@@ -65,4 +65,3 @@ Crew | Role | GitHub
 
 - [Check Client side dev-logs!](https://github.com/codestates/Remember-client/projects/1)
 - [Check Sever side dev-logs!](https://github.com/codestates/Remember-server/projects/2)
-
