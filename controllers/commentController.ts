@@ -24,7 +24,7 @@ const commentController = {
 
   commentListController: async (req: Request, res: Response) => {
     const commentInfo = await Comments.findAll();
-    res.status(200).send({ data: { commentInfo } });
+    res.status(200).send({ data: commentInfo });
   },
 };
 
