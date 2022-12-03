@@ -4,7 +4,7 @@ const mainpageRouter = express.Router();
 
 mainpageRouter.get("/mainpage", controller.mainpage.mainpageController);
 mainpageRouter.post(
-  "/mainpage",
+  "/mainpagei",
   controller.mainpage.mainpageDonationController
 );
 mainpageRouter.get(
