@@ -86,7 +86,7 @@ const nodemailerController = {
 
     const content = await mail.sendMail({
       from: "Remember-service@gmail.com",
-      to: `${email}`,
+      to: req.body.email,
       subject: `[Remember] ${name}후원자님, 요청하신 증명서를 보내드립니다.`,
       html: `
       <head>
@@ -251,6 +251,7 @@ const nodemailerController = {
       </body>
       `,
     });
+    res.status(200).json({ message: "success" });
   },
 };
 

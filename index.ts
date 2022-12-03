@@ -4,13 +4,14 @@ import "dotenv/config";
 import morgan from "morgan";
 
 // route 적용
-import landingpageRouter from "./routes/landingpage";
-import loginRouter from "./routes/login";
-import mailRouter from "./routes/mail";
-import mainpageRouter from "./routes/mainpage";
-import postRouter from "./routes/post";
-import userInfoRouter from "./routes/userInfo";
-import withdrawRouter from "./routes/withdraw";
+// import landingpageRouter from "./routes/landingpage";
+// import loginRouter from "./routes/login";
+// import mailRouter from "./routes/mail";
+// import mainpageRouter from "./routes/mainpage";
+// import postRouter from "./routes/post";
+// import userInfoRouter from "./routes/userInfo";
+// import withdrawRouter from "./routes/withdraw";
+import router from "./routes";
 
 let corsOptions = {
   origin: "*",
@@ -23,14 +24,14 @@ const createApp = () => {
 
   app.use(morgan());
   app.use(express.json());
-  // app.use(routes);
-  app.use("/", landingpageRouter);
-  app.use("/", loginRouter);
-  app.use("/", mailRouter);
-  app.use("/", mainpageRouter);
-  app.use("/", postRouter);
-  app.use("/", userInfoRouter);
-  app.use("/", withdrawRouter);
+  app.use(router);
+  // app.use("/", landingpageRouter);
+  // app.use("/", loginRouter);
+  // app.use("/", mailRouter);
+  // app.use("/", mainpageRouter);
+  // app.use("/", postRouter);
+  // app.use("/", userInfoRouter);
+  // app.use("/", withdrawRouter);
 
   app.get("/", (req, res) => {
     res.status(200).send("hehe");

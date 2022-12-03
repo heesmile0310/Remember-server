@@ -7,6 +7,7 @@ const withdrawController = {
     await Users.destroy({
       where: { email: email },
     });
+    res.status(200).json({ message: "success delete" });
   },
 };
 export default withdrawController;
