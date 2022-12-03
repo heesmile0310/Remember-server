@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.ts",
+    "start": "nodemon server.ts",
     "migrationusers": "./node_modules/.bin/ts-node ./migrations/create-table/1.create-table-users.ts",
     "migrationmainposts": "./node_modules/.bin/ts-node ./migrations/create-table/2.create-table-mainposts.ts",
     "migrationcomments": "./node_modules/.bin/ts-node ./migrations/create-table/3.create-table-comments.ts",
@@ -55,6 +55,7 @@
     "@types/jsonwebtoken": "^8.5.0",
     "@types/node": "^8.0.29",
     "@types/validator": "^13.1.4",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
     "ts-node": "^3.3.0",
     "typescript": "^3.9.10"

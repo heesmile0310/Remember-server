@@ -19,7 +19,9 @@ const mainpageController = {
   },
 
   mainpageDonationController: async (req: Request, res: Response) => {
+    // console.log(req.body);
     const { title } = req.body;
+
     const totalAmount = await Donors.sum("donationAmount", {
       where: { mainPost_title: title },
     });
