@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.ts",
+    "distribute": "npm i && pm2 start server.ts --name remember -i max",
     "migrationusers": "./node_modules/.bin/ts-node ./migrations/create-table/1.create-table-users.ts",
     "migrationmainposts": "./node_modules/.bin/ts-node ./migrations/create-table/2.create-table-mainposts.ts",
     "migrationcomments": "./node_modules/.bin/ts-node ./migrations/create-table/3.create-table-comments.ts",
