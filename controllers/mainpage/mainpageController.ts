@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { MainPosts } from "../models/MainPosts";
-import { Donors } from "../models/Donors";
+import { MainPosts } from "../../models/MainPosts";
+import { Donors } from "../../models/Donors";
 
 const mainpageController = {
   mainpageController: async (req: Request, res: Response) => {
@@ -19,9 +19,10 @@ const mainpageController = {
   },
 
   mainpageDonationController: async (req: Request, res: Response) => {
-    const { title } = req.body;
+    const { id } = req.body;
+
     const totalAmount = await Donors.sum("donationAmount", {
-      where: { mainPost_title: title },
+      where: { mainPost_id: id },
     });
     const percentage = Math.floor((+`${totalAmount}` / 1000000) * 100);
     res.status(200).send({ data: { percentage, totalAmount } });
