@@ -1,8 +1,6 @@
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
-import morgan from "morgan";
-
 // route 적용
 import router from "./routes";
 
@@ -15,7 +13,6 @@ const createApp = () => {
   const app = express();
   app.use(cors(corsOptions));
 
-  app.use(morgan());
   app.use(express.json());
   app.use(router);
 
